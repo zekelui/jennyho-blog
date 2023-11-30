@@ -16,22 +16,22 @@
   <meta name="author" content="Zeke Lui">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安裝環境 安裝Node.js：  開啟終端機（Terminal）。 輸入以下指令安裝Node.js和npm：   123sudo apt-get updatesudo apt-get install nodejssudo apt-get install npm  安裝Git：  在終端機中輸入以下指令安裝Git：   1sudo apt-get install git  安裝Hexo：  使用np">
+    <meta name="description" content="php.ini 檔案位置php.ini 通常被放置在以下目錄中：  &#x2F;etc&#x2F;php.ini (主要的目錄) &#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版) &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)  如果您無法找到 php.ini 檔案，可以執行以">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用 Hexo 搭建免費 Blog">
-<meta property="og:url" content="http://example.com/2023/11/30/%E4%BD%BF%E7%94%A8-Hexo-%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B2%BB-Blog/index.html">
+<meta property="og:title" content="php.ini 常用參數設置">
+<meta property="og:url" content="http://example.com/2023/11/30/php-ini-%E5%B8%B8%E7%94%A8%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Traveler&#39;s Notebook">
-<meta property="og:description" content="安裝環境 安裝Node.js：  開啟終端機（Terminal）。 輸入以下指令安裝Node.js和npm：   123sudo apt-get updatesudo apt-get install nodejssudo apt-get install npm  安裝Git：  在終端機中輸入以下指令安裝Git：   1sudo apt-get install git  安裝Hexo：  使用np">
+<meta property="og:description" content="php.ini 檔案位置php.ini 通常被放置在以下目錄中：  &#x2F;etc&#x2F;php.ini (主要的目錄) &#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版) &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)  如果您無法找到 php.ini 檔案，可以執行以">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-11-30T03:04:48.000Z">
-<meta property="article:modified_time" content="2023-11-30T03:06:55.336Z">
+<meta property="article:published_time" content="2023-11-30T10:51:38.000Z">
+<meta property="article:modified_time" content="2023-11-30T10:53:58.124Z">
 <meta property="article:author" content="Zeke Lui">
-<meta property="article:tag" content="hexo">
+<meta property="article:tag" content="php">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>使用 Hexo 搭建免費 Blog - Traveler&#39;s Notebook</title>
+  <title>php.ini 常用參數設置 - Traveler&#39;s Notebook</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="使用 Hexo 搭建免費 Blog"></span>
+            <span id="subtitle" data-typed-text="php.ini 常用參數設置"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-30 11:04" pubdate>
-          2023年11月30日 上午
+        <time datetime="2023-11-30 18:51" pubdate>
+          2023年11月30日 晚上
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          2.6k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          13 分鐘
+          23 分鐘
         
       </span>
     
@@ -268,79 +268,81 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">使用 Hexo 搭建免費 Blog</h1>
+            <h1 id="seo-header">php.ini 常用參數設置</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="安裝環境"><a href="#安裝環境" class="headerlink" title="安裝環境"></a>安裝環境</h1><ol>
-<li><p>安裝Node.js：</p>
+                <h1 id="php-ini-檔案位置"><a href="#php-ini-檔案位置" class="headerlink" title="php.ini 檔案位置"></a>php.ini 檔案位置</h1><p>php.ini 通常被放置在以下目錄中：</p>
 <ul>
-<li>開啟終端機（Terminal）。</li>
-<li>輸入以下指令安裝Node.js和npm：</li>
+<li>&#x2F;etc&#x2F;php.ini (主要的目錄)</li>
+<li>&#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版)</li>
+<li>&#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)</li>
 </ul>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt-get update<br>sudo apt-get install nodejs<br>sudo apt-get install npm<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>安裝Git：</p>
-<ul>
-<li>在終端機中輸入以下指令安裝Git：</li>
-</ul>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt-get install git<br></code></pre></td></tr></table></figure>
-</li>
-<li><p>安裝Hexo：</p>
-<ul>
-<li>使用npm安裝Hexo命令行工具，請在終端機中輸入以下指令：</li>
-</ul>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo npm install -g hexo-cli<br></code></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="創建-Blog"><a href="#創建-Blog" class="headerlink" title="# 創建 Blog"></a># 創建 Blog</h1><p>使用以下指令創建一個新的Hexo博客：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo init myblog<br><span class="hljs-built_in">cd</span> myblog<br>npm install<br><span class="hljs-comment"># 安裝部署</span><br>npm install hexo-deployer-git --save<br></code></pre></td></tr></table></figure>
+<p>如果您無法找到 php.ini 檔案，可以執行以下命令確定其位置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">php -i | grep &quot;Loaded Configuration File&quot;<br></code></pre></td></tr></table></figure>
 
 
-<p>這將會在當前目錄下創建一個名為myblog的文件夾，並初始化Hexo博客的結構和配置文件。</p>
-<p>配置博客</p>
-<p>打開myblog文件夾，找到_config.yml文件並使用文本編輯器打開它。</p>
-<p>根據個人需求，修改以下配置：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs bash">title: My Blog <span class="hljs-comment"># 博客的標題</span><br>subtitle: Hexo is awesome! <span class="hljs-comment"># 博客的副標題</span><br>description: My personal blog powered by Hexo <span class="hljs-comment"># 博客的描述</span><br>author: Your Name <span class="hljs-comment"># 博客的作者名稱</span><br>url: https://yourblog.com <span class="hljs-comment"># 博客的URL</span><br>deploy:<br><span class="hljs-built_in">type</span>: git<br>repo: https://github.com/yourusername/yourusername.github.io.git <span class="hljs-comment"># 部署到GitHub Pages的倉庫URL</span><br>branch: main<br></code></pre></td></tr></table></figure>
-
-
-<p>注意：如果您使用其他的部署方式，可以修改deploy的配置。</p>
-<p>創建一篇新文章</p>
-<p>使用以下指令在source&#x2F;_posts文件夾中創建一篇新的Markdown格式的文章：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo new <span class="hljs-string">&quot;Hello Hexo&quot;</span><br></code></pre></td></tr></table></figure>
-
-
-<p>這將會在source&#x2F;_posts文件夾中創建一個名為hello-hexo.md的文件。</p>
-<p>編寫文章</p>
-<p>使用文本編輯器打開hello-hexo.md文件，並在文件中編寫文章內容。</p>
-<p>生成靜態文件</p>
-<p>使用以下指令生成靜態文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo generate<br></code></pre></td></tr></table></figure>
-
-
-<p>這將會在public文件夾中生成靜態文件。</p>
-<p>預覽博客</p>
-<p>使用以下指令在本地啟動Hexo伺服器，預覽博客：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo server<br></code></pre></td></tr></table></figure>
-
-
-<p>在瀏覽器中打開<a href="http://localhost:4000，即可預覽您的博客。">http://localhost:4000，即可預覽您的博客。</a></p>
-<h1 id="部署到-Github"><a href="#部署到-Github" class="headerlink" title="部署到 Github"></a>部署到 Github</h1><p>部署到 Github 需要先在 Github 上創建一個新的 repository，然後將 Hexo 博客源碼推送到該 repository 上。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs bash">hexo clean (清除生成的靜態文件)<br>hexo generate (生成新的靜態文件)<br>hexo deploy (部署到 GitHub)<br></code></pre></td></tr></table></figure>
-
-
-<p>當部署完成後，您的博客將會被推送到您指定的 Github repository 上。在瀏覽器中打開該 repository 的 URL，即可訪問您的博客。</p>
-<h1 id="部署到-Vercel-Server"><a href="#部署到-Vercel-Server" class="headerlink" title="部署到 Vercel Server"></a>部署到 Vercel Server</h1><p>要將Hexo部署到Vercel，需要按照以下步驟進行操作：</p>
+<p>這將輸出 php.ini 檔案的完整路徑。</p>
+<h1 id="文件上傳相關"><a href="#文件上傳相關" class="headerlink" title="文件上傳相關"></a>文件上傳相關</h1><p>在 php.ini 文件中，有一些相關的參數可以設置文件上傳的相關限制。以下是一些常用的參數：</p>
 <ol>
-<li>在Vercel上創建帳號，並登錄到Vercel控制台。</li>
-<li>在Vercel控制台中，點擊”New Project”創建一個新的項目。</li>
-<li>選擇從Git Repository（例如GitHub、GitLab等）創建項目。</li>
-<li>授予Vercel訪問您的Git Repository的權限，並選擇要部署的Repository。</li>
-<li>確認項目設置（例如項目名稱和部署設置）。</li>
-<li>確認設置後，Vercel將自動部署您的Hexo博客。</li>
-<li>部署完成後，您可以在Vercel控制台中查看部署的狀態和URL。</li>
-<li>在瀏覽器中打開URL，即可訪問您的Hexo博客。</li>
+<li>upload_max_filesize：設置允許的最大文件大小，預設值為2M。可以使用以下格式：’10M’、’500K’、’500’（表示500字節）。</li>
+<li>post_max_size：設置能夠接收的最大 POST 數據量，預設值為8M。此值必須大於等於 upload_max_filesize，以確保文件上傳不會超過此限制。</li>
+<li>max_file_uploads：設置一次最多允許上傳的文件數量，預設值為20。</li>
+<li>upload_tmp_dir：設置文件上傳時的臨時目錄，預設為系統臨時目錄。</li>
+<li><strong>max_input_vars</strong>：允許一次 POST 請求中傳入的變數數量。默認值為 1000。</li>
 </ol>
+<p>您可以在 php.ini 文件中找到這些參數，並根據您的需求進行修改。修改後，您需要重新啟動網頁伺服器才能使其生效。</p>
+<p>另外，值得注意的是，上傳文件還受到伺服器的其他限制，如操作系統的文件大小限制、網頁伺服器的限制等。如果遇到文件上傳相關問題，請確保檢查並修改這些限制。</p>
+<h1 id="數據處理"><a href="#數據處理" class="headerlink" title="數據處理"></a>數據處理</h1><p>在php.ini文件中，有一些与数据处理相关的参数可以设置。以下是一些常用的参数：</p>
+<ol>
+<li>memory_limit：设置脚本最大允许占用的内存量。默认值为128M。可以使用以下格式：’256M’、’2G’（表示2GB）。</li>
+<li>max_execution_time：设置脚本最大执行时间，单位为秒。默认值为30秒。</li>
+<li>max_input_time：设置脚本最大执行时间，单位为秒。默认值为60秒。</li>
+<li><strong>output_buffering</strong>：PHP 輸出是否使用緩衝區。默認值為 On。</li>
+</ol>
+<h1 id="重要參數"><a href="#重要參數" class="headerlink" title="重要參數"></a>重要參數</h1><p>php.ini错误提示参数:</p>
+<p>在php.ini文件中，有一些与错误提示相关的参数可以设置。以下是一些常用的参数：</p>
+<ol>
+<li>display_errors：设置是否显示PHP错误信息。默认值为On，表示显示错误信息。如果设置为Off，则不会显示错误信息。</li>
+<li>error_reporting：设置报告哪些PHP错误。可以通过使用错误报告级别标志来设置，如E_ALL表示报告所有错误，E_ERROR表示报告致命错误等。</li>
+<li>log_errors：设置是否将PHP错误信息记录到错误日志文件中。默认值为On，表示会记录错误信息。如果设置为Off，则不会记录错误信息。</li>
+<li>error_log：设置错误日志文件的路径。可以将错误信息记录到指定的日志文件中。</li>
+</ol>
+<p>此外，还可以通过在代码中使用ini_set函数来动态修改这些参数的值，而不必修改php.ini文件。例如，使用ini_set(‘display_errors’, ‘Off’)可以关闭错误信息的显示。</p>
+<h1 id="日期參數"><a href="#日期參數" class="headerlink" title="日期參數"></a>日期參數</h1><p>在php.ini文件中，有一些与日期相关的参数可以设置。以下是一些常用的参数：</p>
+<ol>
+<li>date.timezone：设置服务器的时区。默认值为UTC。可以通过设置合适的时区来确保日期和时间显示正确。</li>
+<li>strtotime：设置一个日期&#x2F;时间字符串，以Unix时间戳的形式返回。常用于日期的计算和转换。</li>
+<li>date.default_latitude：设置默认的纬度值。</li>
+<li>date.default_longitude：设置默认的经度值。</li>
+<li>date.sunrise_zenith：设置日出的黄道仰角。</li>
+<li>date.sunset_zenith：设置日落的黄道仰角。</li>
+</ol>
+<h1 id="Seesion參數"><a href="#Seesion參數" class="headerlink" title="Seesion參數"></a>Seesion參數</h1><p>在php.ini文件中，有一些与会话（session）相关的参数可以设置。以下是一些常用的参数：</p>
+<ol>
+<li>session.save_handler：设置会话数据的保存处理程序。默认值为files，表示会将会话数据保存到文件中。其他可能的值还包括memcached和redis等，表示使用相应的缓存系统来保存会话数据。</li>
+<li>session.save_path：设置会话数据的保存路径。默认值为””，表示使用系统默认的临时目录。可以将其设置为一个特定的目录路径来自定义会话数据的保存位置。</li>
+<li><a target="_blank" rel="noopener" href="http://session.name/">session.name</a>：设置会话的名称。默认值为PHPSESSID。可以通过修改此值来避免与其他应用程序的会话冲突。</li>
+<li>session.cookie_lifetime：设置会话cookie的生命周期，单位为秒。默认值为0，表示会话cookie在浏览器关闭时过期。可以将其设置为一个正整数来指定会话cookie的生命周期。</li>
+<li>session.gc_maxlifetime：设置会话数据的最大生命周期，单位为秒。默认值为1440，表示会话数据在1440秒后过期。可以将其设置为一个正整数来指定会话数据的最大生命周期。</li>
+<li>session.gc_probability：设置会话垃圾回收的概率。默认值为1，表示每个会话请求都有1%的概率触发会话垃圾回收。可以将其设置为一个介于0和100之间的整数来调整会话垃圾回收的触发概率。</li>
+<li>session.gc_divisor：设置会话垃圾回收的分母。默认值为100，表示每个请求都会被除以100来计算触发会话垃圾回收的概率。可以将其设置为一个正整数来调整触发概率的计算。</li>
+</ol>
+<p>.user.ini 參數</p>
+<p>.user.ini 文件是 PHP 7.1.0 版本中引入的一种用户级别的配置文件。它类似于 php.ini 文件，但只适用于当前用户的虚拟主机或目录。</p>
+<p>.user.ini 文件的位置：</p>
+<ul>
+<li>在用户主目录下的 public_html 文件夹中</li>
+<li>在用户的特定虚拟主机目录中</li>
+</ul>
+<p>.user.ini 文件中可以设置的参数与 php.ini 文件相同，包括文件上传相关的参数、数据处理相关的参数、错误提示相关的参数、日期相关的参数以及会话（session）相关的参数等。</p>
+<p>注意：</p>
+<ul>
+<li>.user.ini 文件只适用于 PHP 7.1.0 及以上版本。</li>
+<li>.user.ini 文件可以覆盖 php.ini 文件中的相同参数设置。</li>
+<li>修改 .user.ini 文件后，您需要重新启动网页服务器才能使其生效。</li>
+</ul>
 
                 
               </div>
@@ -349,11 +351,32 @@
             <div>
               <div class="post-metas my-3">
   
+    <div class="post-meta mr-3 d-flex align-items-center">
+      <i class="iconfont icon-category"></i>
+      
+
+<span class="category-chains">
+  
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/php/" class="category-chain-item">php</a>
+  
+  
+
+      </span>
+    
+  
+</span>
+
+    </div>
+  
   
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/hexo/" class="print-no-link">#hexo</a>
+        <a href="/tags/php/" class="print-no-link">#php</a>
       
     </div>
   
@@ -365,8 +388,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>使用 Hexo 搭建免費 Blog</div>
-      <div>http://example.com/2023/11/30/使用-Hexo-搭建免費-Blog/</div>
+      <div>php.ini 常用參數設置</div>
+      <div>http://example.com/2023/11/30/php-ini-常用參數設置/</div>
     </div>
     <div class="license-meta">
       
@@ -410,18 +433,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/11/30/php-ini-%E5%B8%B8%E7%94%A8%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE/" title="php.ini 常用參數設置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">php.ini 常用參數設置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/29/hello-world/" title="Hello World">
-                        <span class="hidden-mobile">Hello World</span>
+                      <a href="/2023/11/30/%E4%BD%BF%E7%94%A8-Hexo-%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B2%BB-Blog/" title="使用 Hexo 搭建免費 Blog">
+                        <span class="hidden-mobile">使用 Hexo 搭建免費 Blog</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
