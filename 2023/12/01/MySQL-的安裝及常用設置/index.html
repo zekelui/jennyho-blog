@@ -16,22 +16,22 @@
   <meta name="author" content="Zeke Lui">
   <meta name="keywords" content="">
   
-    <meta name="description" content="php.ini 檔案位置php.ini 通常被放置在以下目錄中：  &#x2F;etc&#x2F;php.ini (主要的目錄) &#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版) &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)  如果您無法找到 php.ini 檔案，可以執行以">
+    <meta name="description" content="安裝在 Ubuntu 22.04 上安裝 MySQL 8：  更新系統：使用下面的命令更新系統。  12sudo apt updatesudo apt upgrade  安裝 MySQL 8：使用下面的命令安裝 MySQL 8。  1sudo apt install mysql-server  配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL">
 <meta property="og:type" content="article">
-<meta property="og:title" content="php.ini 常用參數設置">
-<meta property="og:url" content="http://example.com/2023/11/30/php-ini-%E5%B8%B8%E7%94%A8%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE/index.html">
+<meta property="og:title" content="MySQL 的安裝及常用設置">
+<meta property="og:url" content="http://example.com/2023/12/01/MySQL-%E7%9A%84%E5%AE%89%E8%A3%9D%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%A8%AD%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Traveler&#39;s Notebook">
-<meta property="og:description" content="php.ini 檔案位置php.ini 通常被放置在以下目錄中：  &#x2F;etc&#x2F;php.ini (主要的目錄) &#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版) &#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)  如果您無法找到 php.ini 檔案，可以執行以">
+<meta property="og:description" content="安裝在 Ubuntu 22.04 上安裝 MySQL 8：  更新系統：使用下面的命令更新系統。  12sudo apt updatesudo apt upgrade  安裝 MySQL 8：使用下面的命令安裝 MySQL 8。  1sudo apt install mysql-server  配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-11-30T10:51:38.000Z">
-<meta property="article:modified_time" content="2023-11-30T10:53:58.124Z">
+<meta property="article:published_time" content="2023-12-01T07:38:19.000Z">
+<meta property="article:modified_time" content="2023-12-01T07:42:58.055Z">
 <meta property="article:author" content="Zeke Lui">
-<meta property="article:tag" content="php">
+<meta property="article:tag" content="mysql">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>php.ini 常用參數設置 - Traveler&#39;s Notebook</title>
+  <title>MySQL 的安裝及常用設置 - Traveler&#39;s Notebook</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="php.ini 常用參數設置"></span>
+            <span id="subtitle" data-typed-text="MySQL 的安裝及常用設置"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-11-30 18:51" pubdate>
-          2023年11月30日 晚上
+        <time datetime="2023-12-01 15:38" pubdate>
+          2023年12月1日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.6k 字
+          2.5k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          23 分鐘
+          21 分鐘
         
       </span>
     
@@ -268,81 +268,74 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">php.ini 常用參數設置</h1>
+            <h1 id="seo-header">MySQL 的安裝及常用設置</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="php-ini-檔案位置"><a href="#php-ini-檔案位置" class="headerlink" title="php.ini 檔案位置"></a>php.ini 檔案位置</h1><p>php.ini 通常被放置在以下目錄中：</p>
-<ul>
-<li>&#x2F;etc&#x2F;php.ini (主要的目錄)</li>
-<li>&#x2F;etc&#x2F;php&#x2F;版本號&#x2F;php.ini (取決於特定的發行版)</li>
-<li>&#x2F;usr&#x2F;local&#x2F;lib&#x2F;php.ini (某些系統可能使用此目錄)</li>
-</ul>
-<p>如果您無法找到 php.ini 檔案，可以執行以下命令確定其位置：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">php -i | grep &quot;Loaded Configuration File&quot;<br></code></pre></td></tr></table></figure>
+                <h1 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h1><p>在 Ubuntu 22.04 上安裝 MySQL 8：</p>
+<ol>
+<li><p>更新系統：使用下面的命令更新系統。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt update<br>sudo apt upgrade<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 MySQL 8：使用下面的命令安裝 MySQL 8。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt install mysql-server<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo mysql_secure_installation<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在配置過程中，您需要設置 MySQL root 用戶的密碼，並可以選擇禁用匿名用戶、禁用遠程 root 登錄等選項。</p>
+</li>
+<li><p>启动MySQL服务：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo service mysql start<br></code></pre></td></tr></table></figure></li>
+</ol>
+<p>在 Rocky Linux 9 上安裝 MySQL 8：</p>
+<ol>
+<li><p>更新系統：使用下面的命令更新系統。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo dnf update<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>安裝 MySQL 8：使用下面的命令安裝 MySQL 8。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo dnf install mysql-server<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL。</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo mysql_secure_installation<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>在配置過程中，您需要設置 MySQL root 用戶的密碼，並可以選擇禁用匿名用戶、禁用遠程 root 登錄等選項。</p>
+</li>
+<li><p>启动MySQL服务：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo systemctl start mysqld<br></code></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="mysql-secure-installation-設置"><a href="#mysql-secure-installation-設置" class="headerlink" title="mysql_secure_installation 設置"></a>mysql_secure_installation 設置</h1><p>以下是MySQL 8中mysql_secure_installation的設置命令行下輸出範例：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs shell">Securing the MySQL server deployment.<br><br>Enter password for user root: <br><br>The existing password for the user account root has expired. Please set a new password.<br><br>New password: <br><br>Re-enter new password: <br><br>Estimated strength of the password: 100 <br><br>Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y<br>By default, a MySQL installation has an anonymous user, allowing anyone to log into MySQL without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother. You should remove them before moving into a production environment.<br><br>Remove anonymous users? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br><br>Normally, root should only be allowed to connect from &#x27;localhost&#x27;. This ensures that someone cannot guess at the root password from the network.<br><br>Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br>By default, MySQL comes with a database named &#x27;test&#x27; that anyone can access. This is also intended only for testing, and should be removed before moving into a production environment.<br><br>Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y<br>- Dropping test database...<br>Success.<br><br>- Removing privileges on test database...<br>Success.<br><br>Reloading the privilege tables will ensure that all changes made so far will take effect immediately.<br><br>Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br>All done!<br></code></pre></td></tr></table></figure>
 
 
-<p>這將輸出 php.ini 檔案的完整路徑。</p>
-<h1 id="文件上傳相關"><a href="#文件上傳相關" class="headerlink" title="文件上傳相關"></a>文件上傳相關</h1><p>在 php.ini 文件中，有一些相關的參數可以設置文件上傳的相關限制。以下是一些常用的參數：</p>
-<ol>
-<li>upload_max_filesize：設置允許的最大文件大小，預設值為2M。可以使用以下格式：’10M’、’500K’、’500’（表示500字節）。</li>
-<li>post_max_size：設置能夠接收的最大 POST 數據量，預設值為8M。此值必須大於等於 upload_max_filesize，以確保文件上傳不會超過此限制。</li>
-<li>max_file_uploads：設置一次最多允許上傳的文件數量，預設值為20。</li>
-<li>upload_tmp_dir：設置文件上傳時的臨時目錄，預設為系統臨時目錄。</li>
-<li><strong>max_input_vars</strong>：允許一次 POST 請求中傳入的變數數量。默認值為 1000。</li>
+<p>上述範例演示了使用mysql_secure_installation命令進行MySQL 8的安全設置的過程。該命令會提示用戶設置新的root用戶密碼，禁用匿名用戶、禁用遠程root登錄以及刪除測試數據庫和相關權限。完成後，系統會重新加載權限表使更改立即生效。</p>
+<h1 id="創建管理帳號"><a href="#創建管理帳號" class="headerlink" title="創建管理帳號"></a>創建管理帳號</h1><ol>
+<li><p>打开终端或命令提示符，并使用以下命令登录到MySQL服务器：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">mysql -u root -p<br></code></pre></td></tr></table></figure>
+
+
+<p> 输入MySQL root用户的密码以登录。</p>
+</li>
+<li><p>创建一个新的MySQL用户，可以使用以下命令：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">CREATE USER &#x27;username&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27;;<br></code></pre></td></tr></table></figure>
+
+
+<p> 注意替换<code>username</code>和<code>password</code>为您希望创建的用户名和密码。</p>
+</li>
+<li><p>授予新用户全部管理权限，可以使用以下命令：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">GRANT ALL PRIVILEGES ON *.* TO &#x27;username&#x27;@&#x27;localhost&#x27; WITH GRANT OPTION;<br></code></pre></td></tr></table></figure>
+
+
+<p> 这将赋予新用户对所有数据库和所有表的全部管理权限。</p>
+</li>
+<li><p>刷新MySQL权限，使更改立即生效：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">FLUSH PRIVILEGES;<br></code></pre></td></tr></table></figure>
+
+
+<p> 这将重新加载权限表，使新的用户和权限立即生效。</p>
+</li>
 </ol>
-<p>您可以在 php.ini 文件中找到這些參數，並根據您的需求進行修改。修改後，您需要重新啟動網頁伺服器才能使其生效。</p>
-<p>另外，值得注意的是，上傳文件還受到伺服器的其他限制，如操作系統的文件大小限制、網頁伺服器的限制等。如果遇到文件上傳相關問題，請確保檢查並修改這些限制。</p>
-<h1 id="數據處理"><a href="#數據處理" class="headerlink" title="數據處理"></a>數據處理</h1><p>在php.ini文件中，有一些与数据处理相关的参数可以设置。以下是一些常用的参数：</p>
-<ol>
-<li>memory_limit：设置脚本最大允许占用的内存量。默认值为128M。可以使用以下格式：’256M’、’2G’（表示2GB）。</li>
-<li>max_execution_time：设置脚本最大执行时间，单位为秒。默认值为30秒。</li>
-<li>max_input_time：设置脚本最大执行时间，单位为秒。默认值为60秒。</li>
-<li><strong>output_buffering</strong>：PHP 輸出是否使用緩衝區。默認值為 On。</li>
-</ol>
-<h1 id="重要參數"><a href="#重要參數" class="headerlink" title="重要參數"></a>重要參數</h1><p>php.ini错误提示参数:</p>
-<p>在php.ini文件中，有一些与错误提示相关的参数可以设置。以下是一些常用的参数：</p>
-<ol>
-<li>display_errors：设置是否显示PHP错误信息。默认值为On，表示显示错误信息。如果设置为Off，则不会显示错误信息。</li>
-<li>error_reporting：设置报告哪些PHP错误。可以通过使用错误报告级别标志来设置，如E_ALL表示报告所有错误，E_ERROR表示报告致命错误等。</li>
-<li>log_errors：设置是否将PHP错误信息记录到错误日志文件中。默认值为On，表示会记录错误信息。如果设置为Off，则不会记录错误信息。</li>
-<li>error_log：设置错误日志文件的路径。可以将错误信息记录到指定的日志文件中。</li>
-</ol>
-<p>此外，还可以通过在代码中使用ini_set函数来动态修改这些参数的值，而不必修改php.ini文件。例如，使用ini_set(‘display_errors’, ‘Off’)可以关闭错误信息的显示。</p>
-<h1 id="日期參數"><a href="#日期參數" class="headerlink" title="日期參數"></a>日期參數</h1><p>在php.ini文件中，有一些与日期相关的参数可以设置。以下是一些常用的参数：</p>
-<ol>
-<li>date.timezone：设置服务器的时区。默认值为UTC。可以通过设置合适的时区来确保日期和时间显示正确。</li>
-<li>strtotime：设置一个日期&#x2F;时间字符串，以Unix时间戳的形式返回。常用于日期的计算和转换。</li>
-<li>date.default_latitude：设置默认的纬度值。</li>
-<li>date.default_longitude：设置默认的经度值。</li>
-<li>date.sunrise_zenith：设置日出的黄道仰角。</li>
-<li>date.sunset_zenith：设置日落的黄道仰角。</li>
-</ol>
-<h1 id="Seesion參數"><a href="#Seesion參數" class="headerlink" title="Seesion參數"></a>Seesion參數</h1><p>在php.ini文件中，有一些与会话（session）相关的参数可以设置。以下是一些常用的参数：</p>
-<ol>
-<li>session.save_handler：设置会话数据的保存处理程序。默认值为files，表示会将会话数据保存到文件中。其他可能的值还包括memcached和redis等，表示使用相应的缓存系统来保存会话数据。</li>
-<li>session.save_path：设置会话数据的保存路径。默认值为””，表示使用系统默认的临时目录。可以将其设置为一个特定的目录路径来自定义会话数据的保存位置。</li>
-<li><a target="_blank" rel="noopener" href="http://session.name/">session.name</a>：设置会话的名称。默认值为PHPSESSID。可以通过修改此值来避免与其他应用程序的会话冲突。</li>
-<li>session.cookie_lifetime：设置会话cookie的生命周期，单位为秒。默认值为0，表示会话cookie在浏览器关闭时过期。可以将其设置为一个正整数来指定会话cookie的生命周期。</li>
-<li>session.gc_maxlifetime：设置会话数据的最大生命周期，单位为秒。默认值为1440，表示会话数据在1440秒后过期。可以将其设置为一个正整数来指定会话数据的最大生命周期。</li>
-<li>session.gc_probability：设置会话垃圾回收的概率。默认值为1，表示每个会话请求都有1%的概率触发会话垃圾回收。可以将其设置为一个介于0和100之间的整数来调整会话垃圾回收的触发概率。</li>
-<li>session.gc_divisor：设置会话垃圾回收的分母。默认值为100，表示每个请求都会被除以100来计算触发会话垃圾回收的概率。可以将其设置为一个正整数来调整触发概率的计算。</li>
-</ol>
-<p>.user.ini 參數</p>
-<p>.user.ini 文件是 PHP 7.1.0 版本中引入的一种用户级别的配置文件。它类似于 php.ini 文件，但只适用于当前用户的虚拟主机或目录。</p>
-<p>.user.ini 文件的位置：</p>
-<ul>
-<li>在用户主目录下的 public_html 文件夹中</li>
-<li>在用户的特定虚拟主机目录中</li>
-</ul>
-<p>.user.ini 文件中可以设置的参数与 php.ini 文件相同，包括文件上传相关的参数、数据处理相关的参数、错误提示相关的参数、日期相关的参数以及会话（session）相关的参数等。</p>
-<p>注意：</p>
-<ul>
-<li>.user.ini 文件只适用于 PHP 7.1.0 及以上版本。</li>
-<li>.user.ini 文件可以覆盖 php.ini 文件中的相同参数设置。</li>
-<li>修改 .user.ini 文件后，您需要重新启动网页服务器才能使其生效。</li>
-</ul>
 
                 
               </div>
@@ -361,7 +354,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/php/" class="category-chain-item">php</a>
+  <a href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E7%AB%A0/" class="category-chain-item">技術文章</a>
   
   
 
@@ -376,7 +369,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/php/" class="print-no-link">#php</a>
+        <a href="/tags/mysql/" class="print-no-link">#mysql</a>
       
     </div>
   
@@ -388,8 +381,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>php.ini 常用參數設置</div>
-      <div>http://example.com/2023/11/30/php-ini-常用參數設置/</div>
+      <div>MySQL 的安裝及常用設置</div>
+      <div>http://example.com/2023/12/01/MySQL-的安裝及常用設置/</div>
     </div>
     <div class="license-meta">
       
@@ -401,7 +394,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>發布於</div>
-          <div>2023年11月30日</div>
+          <div>2023年12月1日</div>
         </div>
       
       
@@ -433,18 +426,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/01/MySQL-%E7%9A%84%E5%AE%89%E8%A3%9D%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%A8%AD%E7%BD%AE/" title="MySQL 的安裝及常用設置">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">MySQL 的安裝及常用設置</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/30/%E4%BD%BF%E7%94%A8-Hexo-%E6%90%AD%E5%BB%BA%E5%85%8D%E8%B2%BB-Blog/" title="使用 Hexo 搭建免費 Blog">
-                        <span class="hidden-mobile">使用 Hexo 搭建免費 Blog</span>
+                      <a href="/2023/11/30/php-ini-%E5%B8%B8%E7%94%A8%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE/" title="php.ini 常用參數設置">
+                        <span class="hidden-mobile">php.ini 常用參數設置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
