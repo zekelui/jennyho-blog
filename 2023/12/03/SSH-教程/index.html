@@ -16,22 +16,22 @@
   <meta name="author" content="Zeke Lui">
   <meta name="keywords" content="">
   
-    <meta name="description" content="安裝在 Ubuntu 22.04 上安裝 MySQL 8：  更新系統：使用下面的命令更新系統。  12sudo apt updatesudo apt upgrade  安裝 MySQL 8：使用下面的命令安裝 MySQL 8。  1sudo apt install mysql-server  配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL">
+    <meta name="description" content="創建 SSH Key在 Rocky Linux 9 上創建 SSH Key 4096：  打開終端機並使用以下命令生成 SSH Key：  1ssh-keygen -t rsa -b 4096  按照提示輸入要保存 SSH Key 的文件名和路徑。  輸入一個強密碼，這樣在使用 SSH Key 時需要輸入密碼。  SSH Key 將會生成在指定的路徑中，包括私鑰（id_rsa）和公鑰（id_rsa">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySQL 的安裝及常用設置">
-<meta property="og:url" content="http://example.com/2023/12/01/MySQL-%E7%9A%84%E5%AE%89%E8%A3%9D%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%A8%AD%E7%BD%AE/index.html">
+<meta property="og:title" content="SSH 教程">
+<meta property="og:url" content="http://example.com/2023/12/03/SSH-%E6%95%99%E7%A8%8B/index.html">
 <meta property="og:site_name" content="Traveler&#39;s Notebook">
-<meta property="og:description" content="安裝在 Ubuntu 22.04 上安裝 MySQL 8：  更新系統：使用下面的命令更新系統。  12sudo apt updatesudo apt upgrade  安裝 MySQL 8：使用下面的命令安裝 MySQL 8。  1sudo apt install mysql-server  配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL">
+<meta property="og:description" content="創建 SSH Key在 Rocky Linux 9 上創建 SSH Key 4096：  打開終端機並使用以下命令生成 SSH Key：  1ssh-keygen -t rsa -b 4096  按照提示輸入要保存 SSH Key 的文件名和路徑。  輸入一個強密碼，這樣在使用 SSH Key 時需要輸入密碼。  SSH Key 將會生成在指定的路徑中，包括私鑰（id_rsa）和公鑰（id_rsa">
 <meta property="og:locale" content="zh_TW">
-<meta property="article:published_time" content="2023-12-01T07:38:19.000Z">
-<meta property="article:modified_time" content="2023-12-01T07:42:58.055Z">
+<meta property="article:published_time" content="2023-12-03T06:38:42.000Z">
+<meta property="article:modified_time" content="2023-12-03T06:46:03.355Z">
 <meta property="article:author" content="Zeke Lui">
-<meta property="article:tag" content="mysql">
+<meta property="article:tag" content="ssh">
 <meta name="twitter:card" content="summary_large_image">
   
   
   
-  <title>MySQL 的安裝及常用設置 - Traveler&#39;s Notebook</title>
+  <title>SSH 教程 - Traveler&#39;s Notebook</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -197,7 +197,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="MySQL 的安裝及常用設置"></span>
+            <span id="subtitle" data-typed-text="SSH 教程"></span>
           
         </div>
 
@@ -208,8 +208,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2023-12-01 15:38" pubdate>
-          2023年12月1日 下午
+        <time datetime="2023-12-03 14:38" pubdate>
+          2023年12月3日 下午
         </time>
       </span>
     
@@ -220,7 +220,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          2.5k 字
+          2.4k 字
         
       </span>
     
@@ -231,7 +231,7 @@
         
         
         
-          21 分鐘
+          20 分鐘
         
       </span>
     
@@ -268,74 +268,135 @@
       <div class="container nopadding-x-md" id="board-ctn">
         <div id="board">
           <article class="post-content mx-auto">
-            <h1 id="seo-header">MySQL 的安裝及常用設置</h1>
+            <h1 id="seo-header">SSH 教程</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="安裝"><a href="#安裝" class="headerlink" title="安裝"></a>安裝</h1><p>在 Ubuntu 22.04 上安裝 MySQL 8：</p>
+                <h1 id="創建-SSH-Key"><a href="#創建-SSH-Key" class="headerlink" title="創建 SSH Key"></a>創建 SSH Key</h1><p>在 Rocky Linux 9 上創建 SSH Key 4096：</p>
 <ol>
-<li><p>更新系統：使用下面的命令更新系統。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt update<br>sudo apt upgrade<br></code></pre></td></tr></table></figure>
+<li><p>打開終端機並使用以下命令生成 SSH Key：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">ssh-keygen -t rsa -b 4096<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>安裝 MySQL 8：使用下面的命令安裝 MySQL 8。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo apt install mysql-server<br></code></pre></td></tr></table></figure>
+<li><p>按照提示輸入要保存 SSH Key 的文件名和路徑。</p>
 </li>
-<li><p>配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo mysql_secure_installation<br></code></pre></td></tr></table></figure>
+<li><p>輸入一個強密碼，這樣在使用 SSH Key 時需要輸入密碼。</p>
 </li>
-<li><p>在配置過程中，您需要設置 MySQL root 用戶的密碼，並可以選擇禁用匿名用戶、禁用遠程 root 登錄等選項。</p>
+<li><p>SSH Key 將會生成在指定的路徑中，包括私鑰（id_rsa）和公鑰（id_rsa.pub）。</p>
 </li>
-<li><p>启动MySQL服务：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo service mysql start<br></code></pre></td></tr></table></figure></li>
 </ol>
-<p>在 Rocky Linux 9 上安裝 MySQL 8：</p>
+<p>在 Ubuntu 22.04 上創建 SSH Key 4096：</p>
 <ol>
-<li><p>更新系統：使用下面的命令更新系統。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo dnf update<br></code></pre></td></tr></table></figure>
+<li><p>打開終端並運行以下命令生成 SSH Key：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">ssh-keygen -t rsa -b 4096<br></code></pre></td></tr></table></figure>
 </li>
-<li><p>安裝 MySQL 8：使用下面的命令安裝 MySQL 8。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo dnf install mysql-server<br></code></pre></td></tr></table></figure>
+<li><p>按照提示輸入要保存 SSH Key 的文件名和路徑。</p>
 </li>
-<li><p>配置 MySQL：安裝完成後，系統會自動啟動 MySQL 服務，然後可以運行下面的命令來配置 MySQL。</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo mysql_secure_installation<br></code></pre></td></tr></table></figure>
+<li><p>輸入一個強密碼，這樣在使用 SSH Key 時需要輸入密碼。</p>
 </li>
-<li><p>在配置過程中，您需要設置 MySQL root 用戶的密碼，並可以選擇禁用匿名用戶、禁用遠程 root 登錄等選項。</p>
-</li>
-<li><p>启动MySQL服务：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo systemctl start mysqld<br></code></pre></td></tr></table></figure></li>
-</ol>
-<h1 id="mysql-secure-installation-設置"><a href="#mysql-secure-installation-設置" class="headerlink" title="mysql_secure_installation 設置"></a>mysql_secure_installation 設置</h1><p>以下是MySQL 8中mysql_secure_installation的設置命令行下輸出範例：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><code class="hljs shell">Securing the MySQL server deployment.<br><br>Enter password for user root: <br><br>The existing password for the user account root has expired. Please set a new password.<br><br>New password: <br><br>Re-enter new password: <br><br>Estimated strength of the password: 100 <br><br>Do you wish to continue with the password provided?(Press y|Y for Yes, any other key for No) : y<br>By default, a MySQL installation has an anonymous user, allowing anyone to log into MySQL without having to have a user account created for them. This is intended only for testing, and to make the installation go a bit smoother. You should remove them before moving into a production environment.<br><br>Remove anonymous users? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br><br>Normally, root should only be allowed to connect from &#x27;localhost&#x27;. This ensures that someone cannot guess at the root password from the network.<br><br>Disallow root login remotely? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br>By default, MySQL comes with a database named &#x27;test&#x27; that anyone can access. This is also intended only for testing, and should be removed before moving into a production environment.<br><br>Remove test database and access to it? (Press y|Y for Yes, any other key for No) : y<br>- Dropping test database...<br>Success.<br><br>- Removing privileges on test database...<br>Success.<br><br>Reloading the privilege tables will ensure that all changes made so far will take effect immediately.<br><br>Reload privilege tables now? (Press y|Y for Yes, any other key for No) : y<br>Success.<br><br>All done!<br></code></pre></td></tr></table></figure>
-
-
-<p>上述範例演示了使用mysql_secure_installation命令進行MySQL 8的安全設置的過程。該命令會提示用戶設置新的root用戶密碼，禁用匿名用戶、禁用遠程root登錄以及刪除測試數據庫和相關權限。完成後，系統會重新加載權限表使更改立即生效。</p>
-<h1 id="創建管理帳號"><a href="#創建管理帳號" class="headerlink" title="創建管理帳號"></a>創建管理帳號</h1><ol>
-<li><p>打开终端或命令提示符，并使用以下命令登录到MySQL服务器：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">mysql -u root -p<br></code></pre></td></tr></table></figure>
-
-
-<p> 输入MySQL root用户的密码以登录。</p>
-</li>
-<li><p>创建一个新的MySQL用户，可以使用以下命令：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">CREATE USER &#x27;username&#x27;@&#x27;localhost&#x27; IDENTIFIED BY &#x27;password&#x27;;<br></code></pre></td></tr></table></figure>
-
-
-<p> 注意替换<code>username</code>和<code>password</code>为您希望创建的用户名和密码。</p>
-</li>
-<li><p>授予新用户全部管理权限，可以使用以下命令：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">GRANT ALL PRIVILEGES ON *.* TO &#x27;username&#x27;@&#x27;localhost&#x27; WITH GRANT OPTION;<br></code></pre></td></tr></table></figure>
-
-
-<p> 这将赋予新用户对所有数据库和所有表的全部管理权限。</p>
-</li>
-<li><p>刷新MySQL权限，使更改立即生效：</p>
- <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">FLUSH PRIVILEGES;<br></code></pre></td></tr></table></figure>
-
-
-<p> 这将重新加载权限表，使新的用户和权限立即生效。</p>
+<li><p>SSH Key 將會生成在指定的路徑中，包括私鑰（id_rsa）和公鑰（id_rsa.pub）。</p>
 </li>
 </ol>
+<p>請注意，生成的 SSH Key 是用於身份驗證和加密通信，私鑰（id_rsa）需要保持安全，不要與他人分享。公鑰（id_rsa.pub）則可以與其他服務器或用戶共享，以便在建立 SSH 連接時進行驗證。</p>
+<h1 id="將-SSH-Key-公鑰放入伺服器"><a href="#將-SSH-Key-公鑰放入伺服器" class="headerlink" title="將 SSH Key 公鑰放入伺服器"></a>將 SSH Key 公鑰放入伺服器</h1><p>接下來，我們將學習如何將生成的 SSH Key 的公鑰放入目標伺服器，以便在建立 SSH 連接時進行身份驗證。</p>
+<ol>
+<li>登入目標伺服器：</li>
+</ol>
+<p>使用以下命令登入目標伺服器，並輸入您的用戶名和密碼：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">ssh username@server_ip_address<br></code></pre></td></tr></table></figure>
+
+
+<p>將 <code>username</code> 替換為您的用戶名，將 <code>server_ip_address</code> 替換為目標伺服器的 IP 地址。</p>
+<ol start="2">
+<li>創建 .ssh 目錄：</li>
+</ol>
+<p>在目標伺服器上，輸入以下命令創建 <code>.ssh</code> 目錄（如果該目錄不存在）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">mkdir ~/.ssh<br></code></pre></td></tr></table></figure>
+
+<ol start="3">
+<li>在目標伺服器上創建 authorized_keys 文件：</li>
+</ol>
+<p>輸入以下命令在目標伺服器上創建 <code>authorized_keys</code> 文件（如果該文件不存在）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">touch ~/.ssh/authorized_keys<br></code></pre></td></tr></table></figure>
+
+<ol start="4">
+<li>打開 authorized_keys 文件：</li>
+</ol>
+<p>使用您喜歡的文本編輯器打開 <code>authorized_keys</code> 文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">nano ~/.ssh/authorized_keys<br></code></pre></td></tr></table></figure>
+
+<ol start="5">
+<li>複製本地 SSH Key 公鑰的內容：</li>
+</ol>
+<p>在本地計算機上，輸入以下命令打開 <code>.ssh</code> 目錄並複製公鑰的內容：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">cat ~/.ssh/id_rsa.pub<br></code></pre></td></tr></table></figure>
+
+
+<p>複製該命令輸出的 SSH Key 公鑰的內容。</p>
+<ol start="6">
+<li>將公鑰粘貼到 authorized_keys 文件：</li>
+</ol>
+<p>在目標伺服器上的 <code>authorized_keys</code> 文件中，粘貼剛才複製的 SSH Key 公鑰內容。</p>
+<ol start="7">
+<li>保存並退出</li>
+</ol>
+<h1 id="使用-SSH-Key-登入伺服器"><a href="#使用-SSH-Key-登入伺服器" class="headerlink" title="使用 SSH Key 登入伺服器"></a>使用 SSH Key 登入伺服器</h1><p>要使用 SSH Key 登入伺服器，請按照以下步驟進行：</p>
+<p>打開終端機並使用以下命令登入目標伺服器：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh username@server_ip_address<br></code></pre></td></tr></table></figure>
+
+
+<p>將 username 替換為您的用戶名，將 server_ip_address 替換為目標伺服器的 IP 地址。</p>
+<p>當您第一次登入時，系統會要求您確認目標伺服器的指紋。輸入「yes」並按下 Enter 鍵確認。</p>
+<p>系統會提示您輸入 SSH Key 的密碼。輸入您在生成 SSH Key 時設置的密碼並按下 Enter 鍵。</p>
+<p>如果一切正常，您將成功登入目標伺服器。</p>
+<p>如果您的 SSH Key 路徑和文件名與預設路徑不同，或者您使用了不同的 SSH Key，請使用以下命令指定 SSH Key：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs shell">ssh -i /path/to/ssh/key username@server_ip_address<br></code></pre></td></tr></table></figure>
+
+
+<p>將 &#x2F;path&#x2F;to&#x2F;ssh&#x2F;key 替換為您的 SSH Key 的實際路徑。</p>
+<p>這樣，您就可以使用 SSH Key 登入伺服器了。SSH Key 提供了一種安全且方便的身份驗證方式，避免了每次登入時輸入密碼的麻煩。請記得保護好您的私鑰，不要隨意分享給他人，以確保您的伺服器安全。</p>
+<h1 id="關閉伺服器-SSH-密碼登入"><a href="#關閉伺服器-SSH-密碼登入" class="headerlink" title="關閉伺服器 SSH 密碼登入"></a>關閉伺服器 SSH 密碼登入</h1><p>關閉伺服器 SSH 密碼登入</p>
+<p>為了進一步增強伺服器的安全性，我們可以關閉 SSH 密碼登入，僅允許使用 SSH Key 進行身份驗證。下面是關閉伺服器 SSH 密碼登入的步驟：</p>
+<ol>
+<li><p>登入目標伺服器：</p>
+<p> 使用以下命令登入目標伺服器，並輸入您的用戶名和密碼：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">ssh username@server_ip_address<br></code></pre></td></tr></table></figure>
+
+
+<p> 將 <code>username</code> 替換為您的用戶名，將 <code>server_ip_address</code> 替換為目標伺服器的 IP 地址。</p>
+</li>
+<li><p>修改 SSH 配置文件：</p>
+<p> 使用以下命令打開 SSH 配置文件：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo nano /etc/ssh/sshd_config<br></code></pre></td></tr></table></figure>
+
+
+<p> 在文件中找到以下行：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other"># PasswordAuthentication yes<br></code></pre></td></tr></table></figure>
+
+
+<p> 將其修改為：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">PasswordAuthentication no<br></code></pre></td></tr></table></figure>
+
+
+<p> 保存文件並關閉編輯器。</p>
+</li>
+<li><p>重新啟動 SSH 服務：</p>
+<p> 使用以下命令重新啟動 SSH 服務：</p>
+ <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs other">sudo systemctl restart sshd<br></code></pre></td></tr></table></figure>
+</li>
+<li><p>驗證設置生效：</p>
+<p> 現在，嘗試使用密碼登入目標伺服器，您應該會收到 “Permission denied, please try again.” 的錯誤訊息。</p>
+</li>
+</ol>
+<p>現在，您已成功關閉伺服器的 SSH 密碼登入，僅允許使用 SSH Key 進行身份驗證。這提高了您伺服器的安全性，因為 SSH Key 比密碼更難以破解。在使用 SSH Key 登入伺服器之前，請確保您定期備份 SSH Key 的私鑰和公鑰。這樣可以防止意外丟失或損壞這些關鍵文件。</p>
+<p>建議將 SSH Key 的私鑰和公鑰備份到安全的位置，例如外部硬碟、雲端存儲或加密的存儲介質中。</p>
+<p>如果私鑰丟失或損壞，您將無法登入伺服器，並需要創建新的 SSH Key。</p>
+<p>除了定期備份，請記得對備份文件進行適當的安全保護，以防止未經授權的訪問或損壞。</p>
+<p>使用 SSH Key 登入多個伺服器</p>
+<p>如果您需要在多個伺服器之間進行頻繁的 SSH 登入，創建和使用 SSH Key 可以提高效率和安全性。</p>
+<p>您可以將相同的 SSH Key 公鑰放入多個目標伺服器的 authorized_keys 文件中。</p>
+<p>這樣，您就可以使用同一個 SSH Key 登入多個伺服器，而不需要每次都輸入密碼。</p>
+<p>同樣地，請確保妥善保管私鑰，以防止未經授權的訪問。</p>
 
                 
               </div>
@@ -354,7 +415,17 @@
     
       <span class="category-chain">
         
-  <a href="/categories/%E6%8A%80%E8%A1%93%E6%96%87%E7%AB%A0/" class="category-chain-item">技術文章</a>
+  <a href="/categories/Rocky-Linux-9/" class="category-chain-item">Rocky Linux 9</a>
+  
+  
+
+      </span>
+    
+  
+    
+      <span class="category-chain">
+        
+  <a href="/categories/Ubuntu-22-04/" class="category-chain-item">Ubuntu 22.04</a>
   
   
 
@@ -369,7 +440,7 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/mysql/" class="print-no-link">#mysql</a>
+        <a href="/tags/ssh/" class="print-no-link">#ssh</a>
       
     </div>
   
@@ -381,8 +452,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>MySQL 的安裝及常用設置</div>
-      <div>http://example.com/2023/12/01/MySQL-的安裝及常用設置/</div>
+      <div>SSH 教程</div>
+      <div>http://example.com/2023/12/03/SSH-教程/</div>
     </div>
     <div class="license-meta">
       
@@ -394,7 +465,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>發布於</div>
-          <div>2023年12月1日</div>
+          <div>2023年12月3日</div>
         </div>
       
       
@@ -426,18 +497,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2023/12/03/SSH-%E6%95%99%E7%A8%8B/" title="SSH 教程">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">SSH 教程</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/11/30/php-ini-%E5%B8%B8%E7%94%A8%E5%8F%83%E6%95%B8%E8%A8%AD%E7%BD%AE/" title="php.ini 常用參數設置">
-                        <span class="hidden-mobile">php.ini 常用參數設置</span>
+                      <a href="/2023/12/01/MySQL-%E7%9A%84%E5%AE%89%E8%A3%9D%E5%8F%8A%E5%B8%B8%E7%94%A8%E8%A8%AD%E7%BD%AE/" title="MySQL 的安裝及常用設置">
+                        <span class="hidden-mobile">MySQL 的安裝及常用設置</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
